@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad and Button</title>
+</head>
+<body>
+    <iframe style="border:0" src="ad.html" width="750" height="200"></iframe>
+    <br>
+    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, accusantium. Enim temporibus qui autem deserunt exercitationem soluta quod consequatur est dicta aspernatur doloremque, repellat, expedita, veniam quo maiores libero distinctio.</p>
+    <a href="https://www.google.com">
+        <button style="background-color: rgb(0, 255, 255); color:black; width: 400px; height: 200px">google button</button>
+    </a>
+    <br> <br>
+    <button onclick="doSomething()" style="background-color: grey;">click here hello goodbye</button>
+
+    <p id="test">Hello test paragraph</p>
+
+    <script>
+        function doSomething(){
+            document.getElementById("test").innerHTML = "Goodbye.";
+        }
+    </script>
+
+</body>
+</html>
