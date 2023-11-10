@@ -1,0 +1,43 @@
+.box{
+    border: 2px solid;
+    height: auto;
+    width: 50%;
+    padding: 25px;
+    float: left;
+    text-align:center;
+    min-height: 100%;
+    box-sizing: border-box;
+    /* both automatically default to auto */
+    }
+.container{
+    height: 100vh;
+    background-color: grey;
+}
+/* position:relative, fixed, absolute, sticky, static */
+.iframe-container{
+    width: 100%;
+    height: 200px;
+    position: fixed;
+    bottom: 0px;
+}
+
+.button-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: #fff; /* Text color */
+    cursor: pointer;
+  }
+
+  .iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    bottom:0px;
+    border: none; /* Remove iframe border */
+  }

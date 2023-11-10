@@ -1,0 +1,64 @@
+#container{
+    border: 2px solid
+}
+#container p{
+    /* descendents of the container */
+    background-color: yellow;
+}
+#container > p{
+    background-color: blue;
+    /* children of the container */
+}
+#container ~ p{
+    background-color:aquamarine;
+    /* sibling elements of container */
+}
+#container + p{
+    background-color:red;
+    /* succeeding sibling element directly adjacent to conatiner*/
+}
+#b1{
+    width: 200px;
+    height: 100px;
+}
+#b1:hover{
+    /* pseudoclasses are behaviors added after item, modify special state of an element */
+    font-size: 1.1em;
+    background-color: lightgreen;
+
+}
+#b1:active{
+    font-size: 1.1em;
+    background-color: lightcoral;
+}
+li:hover{
+    background-color: yellow;
+}
+li:not(:hover){
+    background-color: lightgrey;
+}
+#ul2{
+    background-color:navy
+}
+h2::first-letter{
+    font-size: 2em;
+    font-style: italic;
+}
+#pa::first-line{
+    background-color: yellow;
+}
+#pa::selection{
+    /* these are psuedo elements and they control part of their parent object */
+    color:  lightgreen;
+    background-color: darkgrey;
+}
+#fruit li::before{
+    content: "yes";
+}
+#apple::after{
+    content: "after-apple"
+}
+#fruit li::marker{
+    content: "-";
+    color:brown;
+}

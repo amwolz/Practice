@@ -1,0 +1,43 @@
+.b3{
+    background-color: blueviolet
+}
+h1{
+    /* this is styling by type */
+    color: black
+}
+p{
+    color:rgb(22, 22, 69)
+}
+#pa{
+    /* styling by id */
+    color:red
+}
+#pb{
+    color:green
+}
+#pc{color:yellow}
+.odd{
+    /* styling by class notice .<class-name> */
+    background-color: white;
+
+}
+.even{
+    background-color: pink;
+}
+#testdiv{
+    border: 2px solid;
+    width:200px;
+    height: 75px;
+    overflow: auto;
+}
+#p4{
+    color: white;
+}
+#testdiv2{
+    background-color: red;
+    border: 2px solid;
+    display: inline-block;
+}
+#p5{
+    color: white;
+}
