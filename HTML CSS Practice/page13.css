@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0px;
+}
+header{
+    background-color: lightgray;
+    text-align: center;
+    padding: 25px;
+}
+.navbar{
+    background-color: black;
+    height: 50px;
+}
+aside{
+    width: 20%;
+    float: left;
+}
+section{
+    width: 40%;
+    float: left;
+}
+article{
+    width: 40%;
+    float: left;
+}
+footer{
+    color: lightgrey;
+    text-align: center;
+    padding: 25px;
+    display: block;
+}
+@media screen and (max-width:600px){
+    aside, section, article{
+        width: 100%
+    }
+}
