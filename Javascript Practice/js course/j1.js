@@ -175,3 +175,130 @@ console.log(message);
 let purchaseAmount = 99;
 let discount = purchaseAmount >= 100 ? 10 : 0;
 console.log(`Your total is $${purchaseAmount - purchaseAmount * (discount/100)}`);
+
+const day = 7; 
+
+switch (day) {
+    case 1:
+        console.log("It is Monday");
+        break;
+    case 2:
+        console.log("It is Tuesday");
+        break;
+    case 3:
+        console.log("It is Wednesday");
+        break;
+    case 4:
+        console.log("It is Thursday");
+        break;
+    case 5:
+        console.log("It is Friday");
+        break;
+    case 6:
+        console.log("It is Saturday");
+        break;
+    case 7:
+        console.log("It is Sunday");
+        break;
+    default:
+        console.log(`${day} is not a day`);
+}
+// logical operators =  used to combine or manipulate boolean values 
+//                                    (true or false)
+
+// AND = &&
+// OR  = ||
+// NOT = !
+
+// ---------- EXAMPLE 1 ----------
+const temp1 = 20;
+
+if(temp1 > 0 && temp1 <= 30){
+    console.log("The weather is GOOD");
+}
+else{
+    console.log("The weather is BAD");
+}
+
+// ---------- EXAMPLE 2 ----------
+const temp2 = -250;
+
+if(temp2 <= 0 || temp2 > 30){
+    console.log("The weather is BAD");
+}
+else{
+    console.log("The weather is GOOD");
+}
+
+// ---------- EXAMPLE 3 ----------
+const isSunny = true;
+
+if(!isSunny){
+    console.log("It is CLOUDY");
+}
+else{
+    console.log("It is SUNNY");
+}
+
+//   = assignment operator
+//  == comparison operator (compare if values are equal)
+// === strict equality operator (compare if values & datatype are equal)
+//  != inequality operator
+// !== strict inequality operator
+
+const PI = 3.14;
+
+if(PI === "3.14"){
+    console.log("That is NOT Pi");
+}
+else{
+    console.log("That is Pi");
+}
+
+let loggedIn = false;
+
+document.getElementById("submitLogin").onclick = function(){
+    let username = document.getElementById("loginUsername").value;
+    let pwd = document.getElementById("loginPwd").value;
+    if(username === "myUsername" && pwd === "myPassword"){
+        let loggedIn = true
+        document.getElementById("loginResult").innerHTML = "You're Logged In!";
+    }
+    else{
+        document.getElementById("loginResult").innerHTML = "You're Logged Out. Try username: myUsername password: myPassword";
+    }
+
+
+}
+
+// while loop = repeat some code WHILE some condition is true
+
+// let loggedIn = false;
+// let username;
+// let password;
+
+// while(!loggedIn){
+//     username = window.prompt(`Enter your username`);
+//     password = window.prompt(`Enter your password`);
+
+//     if(username === "myUsername" && password === "myPassword"){
+//         loggedIn = true;
+//         console.log("You are logged in!");
+//     }
+//     else{
+//         console.log("Invalid credentials! Please try again");
+//     }
+// }
+
+// for loop = repeat some code a LIMITED amount of times
+
+// ------- INCREMENT -------
+for(let i = 1; i <= 10; i++){
+    console.log(i);
+}
+
+// ------- DECREMENT -------
+for(let i = 10; i > 0; i--){
+    console.log(i);
+}
+
