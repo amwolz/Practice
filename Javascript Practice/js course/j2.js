@@ -359,11 +359,11 @@ function sum(accumulator, element){
 
 // ---------- EXAMPLE 2 ----------
 const scores = [75, 50, 90, 80, 65, 95];
-const maximum = scores.reduce(getMax);
-const minimum = scores.reduce(getMin);
+const maximum1 = scores.reduce(getMax);
+const minimum1 = scores.reduce(getMin);
 
-console.log(maximum);
-console.log(minimum);
+console.log(maximum1);
+console.log(minimum1);
 
 function getMax(accumulator, element){
     return Math.max(accumulator, element);
@@ -372,3 +372,51 @@ function getMax(accumulator, element){
 function getMin(accumulator, element){
     return Math.min(accumulator, element);
 }
+
+// function expressions = a way to define functions as
+//                                          values or variables
+
+const numbers5 = [1, 2, 3, 4, 5, 6];
+
+const squares = numbers5.map(function(element){
+    return Math.pow(element, 2);
+});
+const cubes = numbers5.map(function(element){
+    return Math.pow(element, 3);
+});
+const evenNums2 = numbers5.filter(function(element){
+    return element % 2 === 0;
+});
+const oddNums2 = numbers5.filter(function(element){
+    return element % 2 !== 0;
+});
+const total2 = numbers5.reduce(function(accumulator, element){
+    return accumulator + element;
+});
+
+console.log(total);
+
+// arrow functions = a concise way to write function expressions
+//                                good for simple functions that you use only once
+//                                (parameters) => some code
+
+// ---------- EXAMPLE 1 ----------
+const hello = (name, age) => {console.log(`Hello ${name}`)
+                              console.log(`You are ${age} years old`)};
+   
+hello("Bro", 25);
+  
+// ---------- EXAMPLE 2 ----------
+setTimeout(() => {console.log("Hello"); 
+                  console.log("Goodbye");}, 3000);
+
+// ---------- EXAMPLE 3 ----------               
+const numbers6 = [1, 2, 3, 4, 5, 6];
+
+const squares3 = numbers6.map((element) => Math.pow(element, 2));
+const cubes3 = numbers6.map((element) => Math.pow(element, 3));
+const evenNums3 = numbers6.filter((element) => element % 2 === 0);
+const oddNums3 = numbers6.filter((element) => element % 2 !== 0);
+const total3 = numbers6.reduce((accumulator, element) => accumulator + element);
+
+console.log(total);
