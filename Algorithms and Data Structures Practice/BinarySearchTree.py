@@ -185,3 +185,133 @@ class Solution(object):
                 de.append((node.left, curr_sum - node.left.val))
         return False
         
+def push(self, val):
+    self.heap.append(val)
+    i = len(self.heap) - 1
+
+    # Percolate up
+    while i > 1 and self.heap[i] < self.heap[i // 2]:
+        tmp = self.heap[i]
+        self.heap[i] = self.heap[i // 2]
+        self.heap[i // 2] = tmp
+        i = i // 2
+
+def pop(self):
+    if len(self.heap) == 1:
+        return None
+    if len(self.heap) == 2:
+        return self.heap.pop()
+
+    res = self.heap[1]   
+    # Move last value to root
+    self.heap[1] = self.heap.pop()
+    i = 1
+    # Percolate down
+    while 2 * i < len(self.heap):
+        if (2 * i + 1 < len(self.heap) and 
+        self.heap[2 * i + 1] < self.heap[2 * i] and 
+        self.heap[i] > self.heap[2 * i + 1]):
+            # Swap right child
+            tmp = self.heap[i]
+            self.heap[i] = self.heap[2 * i + 1]
+            self.heap[2 * i + 1] = tmp
+            i = 2 * i + 1
+        elif self.heap[i] > self.heap[2 * i]:
+            # Swap left child
+            tmp = self.heap[i]
+            self.heap[i] = self.heap[2 * i]
+            self.heap[2 * i] = tmp
+            i = 2 * i
+        else:
+            break
+    return res
+
+def heapify(self, arr):
+    # 0-th position is moved to the end
+    arr.append(arr[0])
+
+    self.heap = arr
+    cur = (len(self.heap) - 1) // 2
+    while cur > 0:
+        # Percolate down
+        i = cur
+        while 2 * i < len(self.heap):
+            if (2 * i + 1 < len(self.heap) and 
+            self.heap[2 * i + 1] < self.heap[2 * i] and 
+            self.heap[i] > self.heap[2 * i + 1]):
+                # Swap right child
+                tmp = self.heap[i]
+                self.heap[i] = self.heap[2 * i + 1]
+                self.heap[2 * i + 1] = tmp
+                i = 2 * i + 1
+            elif self.heap[i] > self.heap[2 * i]:
+                # Swap left child
+                tmp = self.heap[i]
+                self.heap[i] = self.heap[2 * i]
+                self.heap[2 * i] = tmp
+                i = 2 * i
+            else:
+                break
+        cur -= 1
+
+class Solution:
+    def lastStoneWeight(self, stones: List[int]) -> int:
+        # base case if len(stones) < 1
+
+        while len(stones) > 1:
+            
+            sorted = self.sort(stones)
+
+            print(sorted)
+
+            if sorted[0] == sorted[1] and len(sorted) == 2:
+                return 0
+            elif sorted[0] == sorted[1]:
+                stones.pop(1)
+                stones.pop(0)
+            else:
+                sorted[0] = sorted[0] - sorted[1]
+                sorted.pop(1)
+
+            stones = sorted
+        
+        return stones[0]
+                
+    def sort(self, input_list: List[int]) -> List[int]:
+        n = len(input_list)
+        for i in range(n):
+            for j in range(0, n-i-1):
+                if input_list[j] < input_list[j+1]:
+                    # Swap if the element found is less than the next element
+                    input_list[j], input_list[j+1] = input_list[j+1], input_list[j]
+        return input_list
+
+class Solution:
+    def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
+        minHeap = []
+        for x, y in points:
+            dist = (x ** 2) + (y ** 2)
+            minHeap.append((dist, x, y))
+        
+        heapq.heapify(minHeap)
+        res = []
+        for _ in range(k):
+            _, x, y = heapq.heappop(minHeap)
+            res.append((x, y))
+        return res
+    
+class Solution(object):
+    def findKthLargest(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        nums = [-num for num in nums]
+        minHeap = heapq.heapify(nums)
+
+        kthnum = 0
+        for i in range(k):
+            kthnum = heapq.heappop(nums)
+
+        return -kthnum
