@@ -135,3 +135,53 @@ class Solution(object):
                 output.append(level)
         
         return output
+    
+class TreeNode:
+    def __init__(self, val):
+        self.val = val
+        self.left = None
+        self.right = None
+
+def canReachLeaf(root):
+    if not root or root.val == 0:
+        return False
+    
+    if not root.left and not root.right:
+        return True
+    if canReachLeaf(root.left):
+        return True
+    if canReachLeaf(root.right):
+        return True
+    return False
+
+def leafPath(root, path):
+    if not root or root.val == 0:
+        return False
+    path.append(root.val)
+
+    if not root.left and not root.right:
+        return True
+    if leafPath(root.left, path):
+        return True
+    if leafPath(root.right, path):
+        return True
+    path.pop()
+    return False
+
+class Solution(object):
+    def hasPathSum(self, root, sum):
+        if not root:
+            return False
+        de = [
+            (root, sum - root.val),
+        ]
+        while de:
+            node, curr_sum = de.pop()
+            if not node.left and not node.right and curr_sum == 0:
+                return True
+            if node.right:
+                de.append((node.right, curr_sum - node.right.val))
+            if node.left:
+                de.append((node.left, curr_sum - node.left.val))
+        return False
+        
